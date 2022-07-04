@@ -2,9 +2,11 @@
 Hourly updated currency rate application, cached from https://fixer.io/ 3rd party API.
 
 ## Getting Started
-1. Run `npm run dev` in root directory to start the application.
-2. REST Open API Docs accessible through `http://localhost:4000/rest`.
-3. The GraphQL Playground accessible through `http://localhost:4000/graphql`.
+1. Run `npm install` to install all the dependencies.
+2. Run `npm run generate` to build the latest graphql types and swagger.
+3. Run `npm run dev` in root directory to start the application.
+4. REST Open API Docs accessible through `http://localhost:4000/rest`.
+5. The GraphQL Playground accessible through `http://localhost:4000/graphql`.
 
 ## Configurations
 - Binded port can be changed through `PORT` environment variable
