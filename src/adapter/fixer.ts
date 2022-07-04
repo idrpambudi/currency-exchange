@@ -20,10 +20,10 @@ interface LatestConversionResponse {
     timestamp: number
     base: string
     date: string
-    rates: Array<Record<string, number>>
+    rates: Record<string, number>
 }
 
-export const getConversions = async (base: string) : Promise<Array<Record<string, number>>> => {
+export const getConversions = async (base: string) : Promise<Record<string, number>> => {
     const response = await fetch(`${baseURL}/latest?base=${base}`, requestOptions);
     const data : LatestConversionResponse = await response.json();
     return data.rates;

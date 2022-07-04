@@ -18,8 +18,8 @@ export class CurrencyService {
     async syncConversionRate(base: string) : Promise<boolean> {
         const rates = await getConversions(base);
         Object.keys(rates).forEach(async (k) => {
-            await this.repository.setConversionRates(base, k, rates[k]);
-            await this.repository.setConversionRates(k, base, 1/rates[k]);
+            await this.repository.setConversionRate(base, k, rates[k]);
+            await this.repository.setConversionRate(k, base, 1/rates[k]);
         })
         return true;
     }

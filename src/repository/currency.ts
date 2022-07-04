@@ -17,7 +17,7 @@ export class CurrencyRepository {
         }
     }
 
-    async setConversionRates(base: string, to: string, rate: number) {
+    async setConversionRate(base: string, to: string, rate: number) {
         try {
             await this.redisClient.set(`${base}:${to}`, rate, {EX: ttl});
         } catch (e) {
