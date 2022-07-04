@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/swcarlosrj/SpaceX-Land"
   },
-  "keywords": ["typescript", "spacex", "graphql"],
+  "keywords": [
+    "typescript",
+    "spacex",
+    "graphql"
+  ],
   "author": "Carlos Rufo",
   "license": "Apache-2.0",
   "bugs": {
@@ -20,7 +24,9 @@
   },
   "homepage": "https://github.com/swcarlosrj/SpaceX-Land",
   "dependencies": {
+    "@types/redis": "^4.0.11",
     "apollo-server-express": "^2.3.1",
+    "body-parser": "^1.20.0",
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
     "graphql": "^14.0.2",
@@ -32,6 +38,7 @@
     "lower-case": "^1.1.4",
     "moment": "^2.23.0",
     "mongodb": "^3.1.10",
+    "redis": "^4.1.1",
     "sofa-api": "0.2.2",
     "swagger-ui-express": "^4.0.2",
     "ts-node": "^8.0.0",

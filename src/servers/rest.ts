@@ -6,7 +6,7 @@ export default (app, { schema, context }) => {
   const openApi = OpenAPI({
     schema,
     info: {
-      title: 'SpaceX REST API'
+      title: 'Currency Rate REST API'
     }
   });
 

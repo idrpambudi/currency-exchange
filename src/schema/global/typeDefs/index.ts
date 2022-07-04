@@ -1,8 +1,5 @@
-import { Query } from './entryPoints';
-import directives from './directives';
-import scalars from './scalars';
-import common from './common';
+import { Query, Mutation } from './entryPoints';
 
-const global = [Query, directives, scalars, common];
+const global = [Query, Mutation];
 
 export default global;

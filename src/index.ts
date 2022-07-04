@@ -1,18 +1,23 @@
 import express from "express";
-import { getDB } from "./context/db";
 import schema from "./schema";
-import context from "./context";
 import graphql from "./servers/graphql";
 import rest from "./servers/rest";
+import { setupCache } from "./context/cache";
+import { CurrencyRepository } from "./repository/currency";
+import { CurrencyService } from "./service/currency";
+import bodyParser from "body-parser";
 
 (async () => {
   const port = process.env.PORT || 4000;
   const app = express();
-  const db = await getDB();
+  app.use(bodyParser.json());
 
+  const cache = await setupCache();
+  const currencyRepository = new CurrencyRepository(cache);
+  const currencyService = new CurrencyService(currencyRepository);
   const config = {
     schema,
-    context: { ...context, db }
+    context: { currencyService }
   };
 
   graphql(app, config);
